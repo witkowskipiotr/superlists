@@ -12,6 +12,16 @@ class HomePageTest(TestCase):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
 
+    def test_can_save_a_POST_request(self):
+        response = self.client.post('/', data={'item_text': 'A new list item'})
+        self.assertIn('A new list item', response.content.decode())
+        #expected_html = render_to_string(
+        #    'home.html',
+        #    {'new_item_text': 'New item list'}
+        #)
+        #self.assertEqual(response.content.decode(), expected_html)
+        self.assertTemplateUsed(response, 'home.html')
+
     # def test_root_url_resolves_to_home_page_view(self):
     #     found = resolve('/')
     #     self.assertEqual(found.func, home_page)

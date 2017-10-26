@@ -4,14 +4,12 @@
     </head>
     <body>
         <h1>Your To-Do list</h1>
-        <input id="id_new_item" placeholder="Enter a to-do item" />
+        <form method="POST">
+            <input name="item_text" id="id_new_item" placeholder="Enter a to-do item" />
+            {% csrf_token %}
+        </form>
         <table id="id_list_table">
-            <tr>
-                <td id="c1">1</td>
-                <td id="c2">2</td>
-                <td id="c3">3</td>
-            </tr>
-
+            <tr><td>{{ new_item_text }}</td></tr>
         </table>
     </body>
 </html>
