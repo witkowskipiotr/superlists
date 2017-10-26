@@ -1,0 +1,7 @@
+db.sqlite3
+superlists/tests/geckodriver.log
+___pycache__
+*.pyc
+lists/migrations/__pycache__/__init__.cpython-35.pyc
+lists/migrations/__pycache__/__init__.cpython-35.pyc
+superlists/tests/timer_server_temperature.py
